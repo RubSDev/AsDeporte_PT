@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styles from "./navwu.module.scss";
 import { auth } from "../../firebaseconfig";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function NavW() {
+  const router = useRouter();
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -14,9 +17,10 @@ export default function NavW() {
   }, []);
 
   const closeSesion = () => {
-    auth.signOut()
+    auth.signOut();
+    router.push("/");
     setUser(null);
-  }
+  };
 
   return (
     <nav className={styles.NavScss}>
@@ -30,7 +34,9 @@ export default function NavW() {
         />
       </div>
       <div className={styles.contca}>
-        <button className={styles.btnL} onClick={closeSesion}>Salir</button>
+        <button className={styles.btnL} onClick={closeSesion}>
+          Salir
+        </button>
         <img
           width={45}
           height={41}
@@ -38,13 +44,15 @@ export default function NavW() {
           src="/car.png"
           alt=""
         />
-        <img
-          width={41}
-          height={42}
-          className={"styles.iconSim"}
-          src="/avatar.png"
-          alt=""
-        />
+        <Link href="/edit-user">
+          <img
+            width={41}
+            height={42}
+            className={"styles.iconSim"}
+            src="/avatar.png"
+            alt=""
+          />
+        </Link>
       </div>
     </nav>
   );

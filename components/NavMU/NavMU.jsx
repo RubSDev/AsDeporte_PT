@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./navmu.module.scss";
+import Link from "next/link";
 
 export default function NavW() {
   return (
@@ -21,13 +22,15 @@ export default function NavW() {
           src="/car.png"
           alt=""
         />
-        <img
-          width={41}
-          height={42}
-          className={"styles.iconSim"}
-          src="/avatar.png"
-          alt=""
-        />
+        <Link href="/edit-user">
+          <img
+            width={41}
+            height={42}
+            className={"styles.iconSim"}
+            src="/avatar.png"
+            alt=""
+          />
+        </Link>
       </div>
     </nav>
   );

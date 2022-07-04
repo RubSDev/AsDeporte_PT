@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./edituser.module.scss";
 import { useRouter } from "next/router";
 import { auth, db } from "../../firebaseconfig";
+import Link from "next/link";
 
 const initialState = {
   name: "",
@@ -50,10 +51,10 @@ export default function LoginUser() {
     event.preventDefault();
     const update = await db.collection(user).doc(dataLogin.id).set(dataLogin);
     const { docs } = await db.collection(user).get();
-    
+
     const newArray = docs.map((item) => ({ id: item.id, ...item.data() }));
     setDataLogin(newArray[0]);
-    alert('Usuario actualizado')
+    alert("Usuario actualizado");
   }
 
   return (
@@ -179,9 +180,9 @@ export default function LoginUser() {
               Actualizar
             </button>
             <div className={styles.contetContaseña}>
-              <a className={styles.aContaseña}>
-                ¿Ya tienes una cuenta? Iniciar sesión
-              </a>
+              <Link href="/user-list">
+                <a className={styles.aContaseña}>Volver a lista de compras</a>
+              </Link>
             </div>
           </div>
         </div>

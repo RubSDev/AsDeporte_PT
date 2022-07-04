@@ -1,6 +1,18 @@
 .NavScss {
   display: none;
 }
+
+.btnL {
+  background-color: #f27322;
+  color: white;
+  border-radius: 8px;
+  width: 270px;
+  height: 48px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border: none;
+  font-size: 16px;
+  margin-right: 16px;
+}
 @media only screen and (min-width: 768px) {
   .NavScss {
     width: 100%;
@@ -12,7 +24,7 @@
     margin-bottom: 40px;
   }
   .contl {
-    width: 50%;
+    width: 60%;
     padding-left: 40px;
   }
   .contca {
@@ -27,7 +39,7 @@
 }
 @media only screen and (min-width: 1024px) {
   .contca {
-    width: 12%;
+    width: 20%;
     display: flex;
     justify-content: space-between;
   }

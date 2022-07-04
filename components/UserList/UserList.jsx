@@ -18,25 +18,24 @@ export default function UserLiast() {
   const [product, setProduct] = useState("");
   const [listProduct, setListProduct] = useState([]);
   const [user, setUser] = useState();
-  const [dataUser, setDataUser] = useState(initialState)
-
+  const [dataUser, setDataUser] = useState(initialState);
 
   const addProduct = (e) => {
     e.preventDefault();
-    if(product.length !== 0) {
-      const newList = [...dataUser.list, product]
-      const newUser = {...dataUser}
-      newUser.list = newList
+    if (product.length !== 0) {
+      const newList = [...dataUser.list, product];
+      const newUser = { ...dataUser };
+      newUser.list = newList;
       setDataUser(newUser);
       setProduct("");
     }
   };
   const deleteProduct = (e, product) => {
     e.preventDefault();
-    const newListProduct = dataUser.list.filter(item=> item !== product)
-    const newUser = {...dataUser }
+    const newListProduct = dataUser.list.filter((item) => item !== product);
+    const newUser = { ...dataUser };
     newUser.list = newListProduct;
-    setDataUser(newUser)
+    setDataUser(newUser);
   };
 
   useEffect(() => {
@@ -50,20 +49,19 @@ export default function UserLiast() {
         const { docs } = await db.collection(user).get();
         const newArray = docs.map((item) => ({ id: item.id, ...item.data() }));
         setDataUser(newArray[0]);
-        
       }
     };
     getUser();
   }, []);
 
   async function saveList(e) {
-    e.preventDefault()
+    e.preventDefault();
     console.log(dataUser);
     const update = await db.collection(user).doc(dataUser.id).set(dataUser);
     const { docs } = await db.collection(user).get();
     const newArray = docs.map((item) => ({ id: item.id, ...item.data() }));
     setDataUser(newArray[0]);
-    alert('lista actualizada')
+    alert("lista actualizada");
   }
 
   return (
@@ -100,9 +98,11 @@ export default function UserLiast() {
                     onChange={(e) => setProduct(e.target.value)}
                   />
                 </div>
-
-                <button className={styles.btnL} onClick={(e) => addProduct(e)}>
+                <button className={styles.btnpLA} onClick={(e) => addProduct(e)}>
                   Agregar
+                </button>
+                <button className={styles.btnL} onClick={saveList}>
+                  Salvar Lista
                 </button>
               </div>
               <div className={styles.contProducL}>
@@ -121,9 +121,6 @@ export default function UserLiast() {
               </div>
             </form>
           </div>
-            <button className={styles.btnL} onClick={saveList}>
-              Salvar Lista
-            </button>
         </div>
       </div>
     </div>

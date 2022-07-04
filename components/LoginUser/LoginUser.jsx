@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./loginUser.module.scss";
 import { useRouter } from "next/router";
 import { auth } from "../../firebaseconfig";
+import Link from "next/link";
 
 const initialState = {
   email: "",
@@ -10,7 +11,7 @@ const initialState = {
 
 export default function LoginUser() {
   const router = useRouter();
-
+  const url = "http://localhost:3000";
   const [errorMsg, setErrorMsg] = useState("");
   console.log("error", errorMsg);
   const [dataLogin, setDataLogin] = useState(initialState);
@@ -28,8 +29,11 @@ export default function LoginUser() {
     auth
       .createUserWithEmailAndPassword(dataLogin.email, dataLogin.password)
       .then((res) => {
-        console.log('res', res)
-        alert("Usuario registrado")})
+        console.log("res", res);
+        alert("Usuario registrado");
+        router.push("/register");
+      })
+
       .catch((e) => {
         console.log("error register", e);
         if (e.code == "auth/invalid-email") {
@@ -44,7 +48,7 @@ export default function LoginUser() {
   async function login(event) {
     auth
       .signInWithEmailAndPassword(dataLogin.email, dataLogin.password)
-      .then((res) => console.log("login correcto", res))
+      .then((res) => router.push("/user-list"))
       .catch((e) => {
         console.log("error login", e);
         if (e.code == "auth/invalid-email") {
@@ -102,14 +106,16 @@ export default function LoginUser() {
             <button className={styles.btnL} onClick={login}>
               Iniciar
             </button>
-            <button className={styles.btnL} onClick={register}>
+            <button className={styles.btnLA} onClick={register}>
               Registrar
             </button>
             <p>{errorMsg}</p>
             <div className={styles.contetContaseña}>
-              <a className={styles.aContaseña}>
-                ¿Aún no tienes cuenta? Crear cuenta
-              </a>
+              <Link href="/register">
+                <a className={styles.aContaseña}>
+                  ¿Aún no tienes cuenta? Crear cuenta
+                </a>
+              </Link>
             </div>
           </div>
         </div>

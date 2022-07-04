@@ -9,6 +9,23 @@
   background-color: #ffc5a0;
   cursor: pointer;
 }
+.btnLA:hover {
+  color: #ffc5a0;
+  border: solid 1px #ffc5a0;
+  cursor: pointer;
+}
+.btnLA {
+  background-color: transparent;
+  color: white;
+  color: #f27322;
+  border-radius: 8px;
+  width: 270px;
+  height: 48px;
+  box-shadow: #0000001a 0px 4px 12px;
+  border: solid 1px #f27322;
+  font-size: 16px;
+  margin-top: 32px;
+}
 .aContaseña:hover {
   color: #9f9fed;
   cursor: pointer;
@@ -113,7 +130,7 @@
   }
   .cardLogin {
     width: 510px;
-    height: 450px;
+    height: 575px;
   }
   .upInputLogin {
     margin-top: 25px;
@@ -129,6 +146,9 @@
     margin-left: 90px;
   }
   .aContaseña {
+    margin-left: 90px;
+  }
+  .btnLA {
     margin-left: 90px;
   }
 }

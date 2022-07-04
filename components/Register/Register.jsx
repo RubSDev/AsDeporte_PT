@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./register.module.scss";
 import { useRouter } from "next/router";
 import { auth, db } from "../../firebaseconfig";
+import Link from "next/link";
 
 const initialState = {
   name: "",
@@ -35,9 +36,9 @@ export default function LoginUser() {
       .createUserWithEmailAndPassword(dataLogin.email, dataLogin.password)
       .then((res) => {
         console.log("res", res.user.uid);
-        db.collection(res.user.uid).add(dataLogin)
+        db.collection(res.user.uid).add(dataLogin);
         alert("Usuario registrado");
-
+        router.push("/");
       })
       .catch((e) => {
         console.log("error register", e);
@@ -173,9 +174,11 @@ export default function LoginUser() {
               Registrarte
             </button>
             <div className={styles.contetContaseña}>
+            <Link href="/">
               <a className={styles.aContaseña}>
                 ¿Ya tienes una cuenta? Iniciar sesión
               </a>
+              </Link>
             </div>
           </div>
         </div>

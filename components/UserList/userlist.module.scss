@@ -13,6 +13,8 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 400px;
+  overflow: auto;
 }
 .contProducList {
   display: flex;
@@ -70,11 +72,35 @@
   font-size: 16px;
   margin-top: 32px;
 }
+.btnpLA {
+  background-color: transparent;
+  color: white;
+  border-radius: 8px;
+  border-radius: 2px;
+  color: #f27322;
+  width: 270px;
+  height: 48px;
+  box-shadow: #0000001a 0px 4px 12px;
+  border: solid 1px #f27322;
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+}
+.btnpLA:hover {
+  color: #ffc5a0;
+  border: solid 1px #ffc5a0;
+  cursor: pointer;
+}
+.btnpL:hover {
+  color: #ffc5a0;
+  border: solid 1px #ffc5a0;
+  cursor: pointer;
+}
 .btnpL {
   background-color: transparent;
   border-radius: 2px;
   color: #f27322;
-  border-radius: 8px;
+
   width: 90px;
   height: 30px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -116,7 +142,7 @@
 .contImgLADW {
   display: none;
 }
-.imgListW{
+.imgListW {
   width: 90%;
 }
 
@@ -140,12 +166,12 @@
     width: 100%;
     justify-content: space-between;
   }
-.cardList{
-  margin: 40px;
-}
-.contProducList{
-  padding: 40px;
-}
+  .cardList {
+    margin: 40px;
+  }
+  .contProducList {
+    padding: 40px;
+  }
   .containerList {
     height: 80vh;
   }
