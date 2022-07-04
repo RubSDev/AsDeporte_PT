@@ -102,7 +102,7 @@ export default function UserLiast() {
                   Agregar
                 </button>
                 <button className={styles.btnL} onClick={saveList}>
-                  Salvar Lista
+                  Salvar Lista / Ver Lista
                 </button>
               </div>
               <div className={styles.contProducL}>
