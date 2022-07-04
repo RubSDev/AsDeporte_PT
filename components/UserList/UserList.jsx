@@ -18,6 +18,7 @@ export default function UserLiast() {
   const [product, setProduct] = useState("");
   const [listProduct, setListProduct] = useState([]);
   const [user, setUser] = useState();
+  console.log('user', user)
   const [dataUser, setDataUser] = useState(initialState);
 
   const addProduct = (e) => {
@@ -42,23 +43,24 @@ export default function UserLiast() {
     const getUser = async () => {
       await auth.onAuthStateChanged((user) => {
         if (user) {
-          setUser(user.uid);
+          setUser(user);
         }
       });
       if (user) {
-        const { docs } = await db.collection(user).get();
+        const { docs } = await db.collection(user.uid).get();
         const newArray = docs.map((item) => ({ id: item.id, ...item.data() }));
+        console.log('array', docs)
         setDataUser(newArray[0]);
       }
     };
     getUser();
-  }, []);
+  }, [user]);
 
   async function saveList(e) {
     e.preventDefault();
     console.log(dataUser);
-    const update = await db.collection(user).doc(dataUser.id).set(dataUser);
-    const { docs } = await db.collection(user).get();
+    const update = await db.collection(user.uid).doc(dataUser.id).set(dataUser);
+    const { docs } = await db.collection(user.uid).get();
     const newArray = docs.map((item) => ({ id: item.id, ...item.data() }));
     setDataUser(newArray[0]);
     alert("lista actualizada");

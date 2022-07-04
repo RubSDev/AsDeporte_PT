@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./navmu.module.scss";
+import { auth } from "../../firebaseconfig";
+import { useRouter } from "next/router";
 import Link from "next/link";
 
 export default function NavW() {
+  const router = useRouter();
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUser(user.email);
+      }
+    });
+  }, []);
+
+  const closeSesion = () => {
+    auth.signOut();
+    router.push("/");
+    setUser(null);
+  };
+
   return (
     <nav className={styles.NavScss}>
       <div className={styles.contl}>
@@ -15,6 +34,9 @@ export default function NavW() {
         />
       </div>
       <div className={styles.contca}>
+        <button className={styles.btnL} onClick={closeSesion}>
+          Salir
+        </button>
         <img
           width={45}
           height={41}
