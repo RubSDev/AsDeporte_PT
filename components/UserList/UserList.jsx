@@ -107,8 +107,8 @@ export default function UserLiast() {
               </div>
               <div className={styles.contProducL}>
                 <h5 className={styles.titleProdcList}>Productos</h5>
-                {dataUser.list.map((item) => (
-                  <div className={styles.contProducList}>
+                {dataUser.list.map((item, index) => (
+                  <div key={index} className={styles.contProducList}>
                     <p className={styles.ppList}>{item}</p>
                     <button
                       className={styles.btnpL}
