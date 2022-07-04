@@ -18,7 +18,7 @@ export default function UserLiast() {
   const [product, setProduct] = useState("");
   const [listProduct, setListProduct] = useState([]);
   const [user, setUser] = useState();
-  console.log('user', user)
+  console.log("user", user);
   const [dataUser, setDataUser] = useState(initialState);
 
   const addProduct = (e) => {
@@ -49,7 +49,7 @@ export default function UserLiast() {
       if (user) {
         const { docs } = await db.collection(user.uid).get();
         const newArray = docs.map((item) => ({ id: item.id, ...item.data() }));
-        console.log('array', docs)
+        console.log("array", docs);
         setDataUser(newArray[0]);
       }
     };
@@ -100,11 +100,14 @@ export default function UserLiast() {
                     onChange={(e) => setProduct(e.target.value)}
                   />
                 </div>
-                <button className={styles.btnpLA} onClick={(e) => addProduct(e)}>
+                <button
+                  className={styles.btnpLA}
+                  onClick={(e) => addProduct(e)}
+                >
                   Agregar
                 </button>
                 <button className={styles.btnL} onClick={saveList}>
-                  Salvar Lista / Ver Lista
+                  Salvar Lista
                 </button>
               </div>
               <div className={styles.contProducL}>

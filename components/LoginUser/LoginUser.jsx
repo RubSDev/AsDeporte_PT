@@ -106,9 +106,7 @@ export default function LoginUser() {
             <button className={styles.btnL} onClick={login}>
               Iniciar
             </button>
-            <button className={styles.btnLA} onClick={register}>
-              Registrar
-            </button>
+
             <p>{errorMsg}</p>
             <div className={styles.contetContaseña}>
               <Link href="/register">
