@@ -1,0 +1,134 @@
+.containerLogin {
+  height: 72vh;
+}
+.contLogin {
+  margin-top: 25%;
+  margin-left: 38px;
+}
+.btnL:hover {
+  background-color: #ffc5a0;
+  cursor: pointer;
+}
+.aContaseña:hover {
+  color: #9f9fed;
+  cursor: pointer;
+}
+.cardLogin {
+  width: 327px;
+  height: 505px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px 30px;
+}
+.inputLogin {
+  width: 270px;
+  height: 48px;
+  border-radius: 8px;
+  border: none;
+  background-color: #f7f7f7;
+  margin-bottom: 12px;
+  padding-left: 12px;
+}
+.contentLogin {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.btnL {
+  background-color: #f27322;
+  color: white;
+  border-radius: 8px;
+  width: 270px;
+  height: 48px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border: none;
+  font-size: 16px;
+  margin-top: 32px;
+}
+.contetContaseña {
+  text-decoration-line: underline;
+  margin-top: 16px;
+  margin-left: 15px;
+}
+.aContaseña {
+  color: #f27322;
+  font-size: 14px;
+}
+.aContaseña:hover {
+  color: #ffc5a0;
+  cursor: pointer;
+}
+.upInputLogin {
+  font-size: 12px;
+  color: #3b4559;
+  margin-bottom: 0;
+}
+
+.titleLogin {
+  color: #3b4559;
+  margin-bottom: 5px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.contImgLADM {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+.contImgLADW {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .contImgLADM {
+    display: none;
+  }
+  .contImgLADW {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+  .contentLogin {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-left: 40px;
+  }
+
+  .containerLogin {
+    height: 80vh;
+  }
+  .containerLoginAndImg {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media only screen and (min-width: 820px) {
+}
+@media only screen and (min-width: 1280px) {
+  .containerLogin {
+    width: 600px;
+  }
+  .cardLogin {
+    width: 510px;
+    height: 450px;
+  }
+  .upInputLogin {
+    margin-top: 25px;
+  }
+  .inputLogin {
+    width: 450px;
+    height: 55px;
+  }
+  .contetaContaseña {
+    margin-left: 150px;
+  }
+  .btnL {
+    margin-left: 90px;
+  }
+  .aContaseña {
+    margin-left: 90px;
+  }
+}

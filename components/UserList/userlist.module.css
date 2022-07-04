@@ -1,0 +1,256 @@
+@charset "UTF-8";
+.containerList {
+  height: 72vh;
+}
+
+.titleProdcList {
+  font-size: 16px;
+  color: #3b4559;
+}
+
+.ppList {
+  font-size: 16px;
+  color: #5b6271;
+}
+
+.contProducL {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.contProducList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid black;
+  padding: 16px 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contList {
+  margin-top: 25%;
+  margin-left: 38px;
+}
+
+.btnL:hover {
+  background-color: #ffc5a0;
+  cursor: pointer;
+}
+
+.aContaseña:hover {
+  color: #9f9fed;
+  cursor: pointer;
+}
+
+.cardList {
+  width: 327px;
+  height: 314px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 10px 30px;
+}
+
+.inputList {
+  width: 270px;
+  height: 48px;
+  border-radius: 8px;
+  border: none;
+  background-color: #f7f7f7;
+  margin-bottom: 12px;
+  padding-left: 12px;
+}
+
+.contentList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.btnL {
+  background-color: #f27322;
+  color: white;
+  border-radius: 8px;
+  width: 270px;
+  height: 48px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border: none;
+  font-size: 16px;
+  margin-top: 32px;
+}
+
+.btnpL {
+  background-color: transparent;
+  border-radius: 2px;
+  color: #f27322;
+  border-radius: 8px;
+  width: 90px;
+  height: 30px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border: solid 1px #f27322;
+  font-size: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contetContaseña {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  margin-top: 16px;
+  margin-left: 15px;
+}
+
+.aContaseña {
+  color: #f27322;
+  font-size: 14px;
+}
+
+.aContaseña:hover {
+  color: #ffc5a0;
+  cursor: pointer;
+}
+
+.upInputList {
+  font-size: 12px;
+  color: #3b4559;
+  margin-bottom: 0;
+}
+
+.titleList {
+  color: #3b4559;
+  margin-bottom: 5px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.contImgLADM {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 32px;
+}
+
+.contImgLADW {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .contListp {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .contImgLADM {
+    display: none;
+  }
+  .contImgLADW {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 32px;
+  }
+  .contentList {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .containerList {
+    height: 80vh;
+  }
+  .containerListAndImg {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .containerList {
+    width: 600px;
+  }
+  .cardList {
+    width: 510px;
+    height: 450px;
+  }
+  .upInputList {
+    margin-top: 25px;
+  }
+  .inputList {
+    width: 450px;
+    height: 55px;
+  }
+  .contetaContaseña {
+    margin-left: 150px;
+  }
+  .btnL {
+    margin-left: 90px;
+  }
+  .aContaseña {
+    margin-left: 90px;
+  }
+}
+/*# sourceMappingURL=userlist.module.css.map */

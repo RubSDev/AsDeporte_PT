@@ -1,0 +1,245 @@
+@charset "UTF-8";
+.containerLogin {
+  /* height: 72vh */
+  margin: 0 0 2.5rem 0;
+}
+
+.contbtna {
+  padding-bottom: 40px;
+}
+
+.contLogin {
+  margin-top: 25%;
+  margin-left: 38px;
+}
+
+.btnL:hover {
+  background-color: #ffc5a0;
+  cursor: pointer;
+}
+
+.aContaseña:hover {
+  color: #9f9fed;
+  cursor: pointer;
+}
+
+.cardLogin {
+  width: 327px;
+  min-height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 10px 30px;
+}
+
+.inputLogin {
+  width: 270px;
+  height: 48px;
+  border-radius: 8px;
+  border: none;
+  background-color: #f7f7f7;
+  margin-bottom: 12px;
+  padding-left: 12px;
+}
+
+.contentLogin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.btnL {
+  background-color: #f27322;
+  color: white;
+  border-radius: 8px;
+  width: 270px;
+  height: 48px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border: none;
+  font-size: 16px;
+  margin-top: 32px;
+}
+
+.contetContaseña {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  margin-top: 16px;
+  margin-left: 15px;
+}
+
+.aContaseña {
+  color: #f27322;
+  font-size: 14px;
+}
+
+.aContaseña:hover {
+  color: #ffc5a0;
+  cursor: pointer;
+}
+
+.upInputLogin {
+  font-size: 12px;
+  color: #3b4559;
+  margin-bottom: 0;
+}
+
+.titleLogin {
+  color: #3b4559;
+  margin-bottom: 5px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.contImgLADM {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 32px;
+}
+
+.contImgLADW {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .contbtna {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-bottom: 50px;
+  }
+  .titleLogin {
+    margin-left: 50px;
+  }
+  .contImgLADM {
+    display: none;
+  }
+  .contImgLADW {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 32px;
+  }
+  .contentLogin {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .cardLogin {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .containerLogin {
+    height: 100%;
+    width: 90%;
+  }
+  .containerLoginAndImg {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+  }
+  .contInpReg {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 8px;
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 820px) {
+  .titleLogin {
+    margin-left: 60px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .titleLogin {
+    margin-left: 110px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .containerLogin {
+    width: 90%;
+  }
+  .cardLogin {
+    width: 100%;
+    height: 100%;
+  }
+  .upInputLogin {
+    margin-top: 25px;
+  }
+  .inputLogin {
+    width: 450px;
+    height: 55px;
+  }
+  .contetaContaseña {
+    margin-left: 150px;
+  }
+  .btnL {
+    margin-left: 90px;
+  }
+  .aContaseña {
+    margin-left: 90px;
+  }
+  .titleLogin {
+    margin-left: 80px;
+  }
+}
+/*# sourceMappingURL=register.module.css.map */

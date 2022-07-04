@@ -1,0 +1,48 @@
+.FooterScss {
+  background-color: #ffc5a0;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  height: 80px;
+  justify-content: space-around;
+  clear: both;
+  margin-top: 50px;
+}
+
+.iconDot {
+  color: white;
+  align-items: center;
+}
+
+.textFooter {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  color: #3b4559;
+  font-size: 12px;
+  font-family: poppins;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .textFooter {
+    padding-top: 0;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .FooterScss {
+    height: 100px;
+    position: relative;
+    bottom: -34px;
+  }
+}
+@media only screen and (min-width: 820px) {
+  .FooterScss {
+    position: relative;
+    bottom: -64px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+}
