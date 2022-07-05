@@ -30,6 +30,9 @@ export default function LoginUser() {
     });
   }
 
+  const validate = dataLogin.name && dataLogin.email && dataLogin.password && dataLogin.cPassword && dataLogin.direction && dataLogin.city && dataLogin.country && dataLogin.phone
+  console.log('validate', validate)
+
   async function register(event) {
     event.preventDefault();
     auth
@@ -116,7 +119,7 @@ export default function LoginUser() {
                   onChange={saveState}
                   value={dataLogin.cPassword}
                 />
-                <p>
+                <p className={styles.ppasswordNC}>
                   {dataLogin.password !== dataLogin.cPassword &&
                     "Password no coincide"}
                 </p>
@@ -170,7 +173,7 @@ export default function LoginUser() {
             </div>
           </div>
           <div className={styles.contbtna}>
-            <button className={styles.btnL} onClick={register}>
+            <button className={styles.btnL} onClick={register} disabled={!validate}>
               Registrarte
             </button>
             <div className={styles.contetContaseña}>

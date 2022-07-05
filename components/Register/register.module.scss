@@ -9,9 +9,24 @@
   margin-top: 25%;
   margin-left: 38px;
 }
+.ppasswordNC {
+  font-size: 12px;
+  color: rgb(255, 5, 5);
+  background: transparent;
+}
+.btnL {
+  background-color: #f27322;
+}
 .btnL:hover {
   background-color: #ffc5a0;
+}
+
+.btnL:enabled {
   cursor: pointer;
+}
+
+.btnL:disabled {
+  background-color: lightgray;
 }
 .aContaseña:hover {
   color: #9f9fed;

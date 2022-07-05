@@ -28,6 +28,8 @@ export default function LoginUser() {
       await auth.onAuthStateChanged((user) => {
         if (user) {
           setUser(user.uid);
+        } else {
+          router.push("/");
         }
       });
       if (user) {
@@ -37,7 +39,7 @@ export default function LoginUser() {
       }
     };
     getUser();
-  }, []);
+  }, [user]);
 
   function saveState(event) {
     // initialState[event.target.name] = event.target.value;
@@ -58,135 +60,144 @@ export default function LoginUser() {
   }
 
   return (
-    <div className={styles.containerLoginAndImg}>
-      <div className={styles.contImgLADM}>
-        <img
-          className={styles.imgLoginM}
-          src="/ladm.png"
-          alt="Logo AsDeporte"
-        />
-      </div>
+    <>
+      {user && (
+        <div className={styles.containerLoginAndImg}>
+          <div className={styles.contImgLADM}>
+            <img
+              className={styles.imgLoginM}
+              src="/ladm.png"
+              alt="Logo AsDeporte"
+            />
+          </div>
 
-      <div className={styles.containerLogin}>
-        <div className={styles.contImgLADW}>
-          <img
-            className={styles.imgLoginW}
-            src="/ladw.png"
-            alt="Logo AsDeporte"
-          />
-        </div>
-        <div className={styles.contentLogin}>
-          <h2 className={styles.titleLogin}>Editar cuenta</h2>
-          <div className={styles.cardLogin}>
-            <div className={styles.contInpReg}>
-              <div>
-                <p className={styles.upInputLogin}>Nombre completo</p>
-                <input
-                  className={styles.inputLogin}
-                  type="text"
-                  placeholder="Nombre completo"
-                  name="name"
-                  onChange={saveState}
-                  value={dataLogin.name}
-                />
-              </div>
-              <div>
-                <p className={styles.upInputLogin}>Email</p>
-                <input
-                  className={styles.inputLogin}
-                  type="texto"
-                  placeholder="Email"
-                  name="email"
-                  onChange={saveState}
-                  value={dataLogin.email}
-                />
-              </div>
-              <div>
-                <p className={styles.upInputLogin}>Password</p>
-                <input
-                  className={styles.inputLogin}
-                  type="password"
-                  placeholder="Password"
-                  name="password"
-                  onChange={saveState}
-                  value={dataLogin.password}
-                />
-              </div>
-              <div>
-                <p className={styles.upInputLogin}>Confirma Password</p>
-                <input
-                  className={styles.inputLogin}
-                  type="password"
-                  placeholder="Confirma Password"
-                  name="cPassword"
-                  onChange={saveState}
-                  value={dataLogin.cPassword}
-                />
-                <p>
-                  {dataLogin.password !== dataLogin.cPassword &&
-                    "Password no coincide"}
-                </p>
-              </div>
-              <div>
-                <p className={styles.upInputLogin}>Dirección</p>
-                <input
-                  className={styles.inputLogin}
-                  type="text"
-                  placeholder="Dirección"
-                  name="direction"
-                  onChange={saveState}
-                  value={dataLogin.direction}
-                />
-              </div>
+          <div className={styles.containerLogin}>
+            <div className={styles.contImgLADW}>
+              <img
+                className={styles.imgLoginW}
+                src="/ladw.png"
+                alt="Logo AsDeporte"
+              />
             </div>
-            <div className={styles.contInpReg}>
-              <div>
-                <p className={styles.upInputLogin}>Ciudad</p>
-                <input
-                  className={styles.inputLogin}
-                  type="text"
-                  placeholder="Ciudad"
-                  name="city"
-                  onChange={saveState}
-                  value={dataLogin.city}
-                />
+            <div className={styles.contentLogin}>
+              <h2 className={styles.titleLogin}>Editar cuenta</h2>
+              <div className={styles.cardLogin}>
+                <div className={styles.contInpReg}>
+                  <div>
+                    <p className={styles.upInputLogin}>Nombre completo</p>
+                    <input
+                      className={styles.inputLogin}
+                      type="text"
+                      placeholder="Nombre completo"
+                      name="name"
+                      onChange={saveState}
+                      value={dataLogin.name}
+                    />
+                  </div>
+                  <div>
+                    <p className={styles.upInputLogin}>Email</p>
+                    <input
+                      className={styles.inputLogin}
+                      type="texto"
+                      placeholder="Email"
+                      name="email"
+                      onChange={saveState}
+                      value={dataLogin.email}
+                      disabled
+                    />
+                  </div>
+                  <div>
+                    <p className={styles.upInputLogin}>Password</p>
+                    <input
+                      className={styles.inputLogin}
+                      type="password"
+                      placeholder="Password"
+                      name="password"
+                      onChange={saveState}
+                      value={dataLogin.password}
+                      disabled
+                    />
+                  </div>
+                  <div>
+                    <p className={styles.upInputLogin}>Confirma Password</p>
+                    <input
+                      className={styles.inputLogin}
+                      type="password"
+                      placeholder="Confirma Password"
+                      name="cPassword"
+                      onChange={saveState}
+                      value={dataLogin.cPassword}
+                      disabled
+                    />
+                    <p>
+                      {dataLogin.password !== dataLogin.cPassword &&
+                        "Password no coincide"}
+                    </p>
+                  </div>
+                  <div>
+                    <p className={styles.upInputLogin}>Dirección</p>
+                    <input
+                      className={styles.inputLogin}
+                      type="text"
+                      placeholder="Dirección"
+                      name="direction"
+                      onChange={saveState}
+                      value={dataLogin.direction}
+                    />
+                  </div>
+                </div>
+                <div className={styles.contInpReg}>
+                  <div>
+                    <p className={styles.upInputLogin}>Ciudad</p>
+                    <input
+                      className={styles.inputLogin}
+                      type="text"
+                      placeholder="Ciudad"
+                      name="city"
+                      onChange={saveState}
+                      value={dataLogin.city}
+                    />
+                  </div>
+                  <div>
+                    <p className={styles.upInputLogin}>País</p>
+                    <input
+                      className={styles.inputLogin}
+                      type="text"
+                      placeholder="País"
+                      name="country"
+                      onChange={saveState}
+                      value={dataLogin.country}
+                    />
+                  </div>
+                  <div>
+                    <p className={styles.upInputLogin}>Teléfono</p>
+                    <input
+                      className={styles.inputLogin}
+                      type="number"
+                      placeholder="Teléfono"
+                      name="phone"
+                      onChange={saveState}
+                      value={dataLogin.phone}
+                    />
+                  </div>
+                </div>
               </div>
-              <div>
-                <p className={styles.upInputLogin}>País</p>
-                <input
-                  className={styles.inputLogin}
-                  type="text"
-                  placeholder="País"
-                  name="country"
-                  onChange={saveState}
-                  value={dataLogin.country}
-                />
-              </div>
-              <div>
-                <p className={styles.upInputLogin}>Teléfono</p>
-                <input
-                  className={styles.inputLogin}
-                  type="number"
-                  placeholder="Teléfono"
-                  name="phone"
-                  onChange={saveState}
-                  value={dataLogin.phone}
-                />
+              <div className={styles.contbtna}>
+                <button className={styles.btnL} onClick={register}>
+                  Actualizar
+                </button>
+                <div className={styles.contetContaseña}>
+                  <Link href="/user-list">
+                    <a className={styles.aContaseña}>
+                      Volver a lista de compras
+                    </a>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-          <div className={styles.contbtna}>
-            <button className={styles.btnL} onClick={register}>
-              Actualizar
-            </button>
-            <div className={styles.contetContaseña}>
-              <Link href="/user-list">
-                <a className={styles.aContaseña}>Volver a lista de compras</a>
-              </Link>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { auth, db } from "../../firebaseconfig";
+import { useRouter } from "next/router";
 
 import styles from "./userlist.module.scss";
 const initialState = {
@@ -20,6 +21,7 @@ export default function UserLiast() {
   const [user, setUser] = useState();
   console.log("user", user);
   const [dataUser, setDataUser] = useState(initialState);
+  const router = useRouter();
 
   const addProduct = (e) => {
     e.preventDefault();
@@ -44,6 +46,8 @@ export default function UserLiast() {
       await auth.onAuthStateChanged((user) => {
         if (user) {
           setUser(user);
+        } else {
+          router.push("/");
         }
       });
       if (user) {
@@ -67,67 +71,71 @@ export default function UserLiast() {
   }
 
   return (
-    <div className={styles.NavScss}>
-      <div className={styles.containerListAndImg}>
-        <div className={styles.contImgLADM}>
-          <img
-            className={styles.imgListM}
-            src="/imgasdm.png"
-            alt="Logo AsDeporte"
-          />
-        </div>
+    <>
+      {user && (
+        <div className={styles.NavScss}>
+          <div className={styles.containerListAndImg}>
+            <div className={styles.contImgLADM}>
+              <img
+                className={styles.imgListM}
+                src="/imgasdm.png"
+                alt="Logo AsDeporte"
+              />
+            </div>
 
-        <div className={styles.containerList}>
-          <div className={styles.contImgLADW}>
-            <img
-              className={styles.imgListW}
-              src="/imgasdw.png"
-              alt="Logo AsDeporte"
-            />
-          </div>
-          <div className={styles.contListp}>
-            <form className={styles.contentList}>
-              <div className={styles.cardList}>
-                <h2 className={styles.titleList}>Ingresar producto</h2>
-                <div>
-                  <p className={styles.upInputList}>Producto</p>
-                  <input
-                    className={styles.inputList}
-                    type="text"
-                    placeholder="Producto"
-                    name="producto"
-                    value={product}
-                    onChange={(e) => setProduct(e.target.value)}
-                  />
-                </div>
-                <button
-                  className={styles.btnpLA}
-                  onClick={(e) => addProduct(e)}
-                >
-                  Agregar
-                </button>
-                <button className={styles.btnL} onClick={saveList}>
-                  Salvar Lista
-                </button>
+            <div className={styles.containerList}>
+              <div className={styles.contImgLADW}>
+                <img
+                  className={styles.imgListW}
+                  src="/imgasdw.png"
+                  alt="Logo AsDeporte"
+                />
               </div>
-              <div className={styles.contProducL}>
-                <h5 className={styles.titleProdcList}>Productos</h5>
-                {dataUser.list.map((item, index) => (
-                  <div key={index} className={styles.contProducList}>
-                    <p className={styles.ppList}>{item}</p>
+              <div className={styles.contListp}>
+                <form className={styles.contentList}>
+                  <div className={styles.cardList}>
+                    <h2 className={styles.titleList}>Ingresar producto</h2>
+                    <div>
+                      <p className={styles.upInputList}>Producto</p>
+                      <input
+                        className={styles.inputList}
+                        type="text"
+                        placeholder="Producto"
+                        name="producto"
+                        value={product}
+                        onChange={(e) => setProduct(e.target.value)}
+                      />
+                    </div>
                     <button
-                      className={styles.btnpL}
-                      onClick={(e) => deleteProduct(e, item)}
+                      className={styles.btnpLA}
+                      onClick={(e) => addProduct(e)}
                     >
-                      ELIMINAR
+                      Agregar
+                    </button>
+                    <button className={styles.btnL} onClick={saveList}>
+                      Salvar Lista
                     </button>
                   </div>
-                ))}
+                  <div className={styles.contProducL}>
+                    <h5 className={styles.titleProdcList}>Productos</h5>
+                    {dataUser.list.map((item, index) => (
+                      <div key={index} className={styles.contProducList}>
+                        <p className={styles.ppList}>{item}</p>
+                        <button
+                          className={styles.btnpL}
+                          onClick={(e) => deleteProduct(e, item)}
+                        >
+                          ELIMINAR
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </form>
               </div>
-            </form>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 }
